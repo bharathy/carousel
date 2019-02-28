@@ -8,7 +8,7 @@ import Carousel from '../components/carousel';
 
 const App = () => {
     return (
-        <div className="app p20-0 ft-14">
+        <div className="app">
             <div className="content">
                 <Carousel />
             </div>
