@@ -8,37 +8,29 @@ class Carousel extends React.Component{
     constructor(props) {
         super(props);
       }
+    
+    componentDidMount() {
+        this.props.fetchImages();
+    }
 
     render() {
+        const { images }= this.props;
+        const slides = images.map((image) =>
+            <li className="carousel__slide" key={ image.id }>
+                <img className="carousel__slide__img" src={ image.previewURL } alt={ image.tags } title={ image.tags }/>
+                <h4 className="carousel__slide__title">{ `${image.user} -  ${image.likes}` }</h4>
+            </li>);
+        
         return (<div className="carousel">
                     <ul className="carousel__slide__container">
-                        <li className="carousel__slide">
-                            <img className="carousel__slide__img" src="/slide.png" alt="slide1" title="slide1"/>
-                            <h4 className="carousel__slide__title">Image Title 1</h4>
-                        </li>
-                        <li className="carousel__slide">
-                            <img className="carousel__slide__img" src="/slide.png" alt="slide2" title="slide2"/>
-                            <h4 className="carousel__slide__title">Image Title 1</h4>
-                        </li>
-                        <li className="carousel__slide">
-                            <img className="carousel__slide__img" src="/slide.png" alt="slide3" title="slide3"/>
-                            <h4 className="carousel__slide__title"> Image Title 1</h4>
-                        </li>
-                        <li className="carousel__slide">
-                            <img className="carousel__slide__img" src="/slide.png" alt="slide4" title="slide4"/>
-                            <h4 className="carousel__slide__title">Image Title 1</h4>
-                        </li>
-                        <li className="carousel__slide">
-                            <img className="carousel__slide__img" src="/slide.png" alt="slide5" title="slide5"/>
-                            <h4 className="carousel__slide__title">Image Title 1</h4>
-                        </li>
+                        { slides }  
                     </ul>
                     <div className="carousel__btn">
                         <button className="btn carousel__btn__prev">Prev</button>
                         <button className="btn carousel__btn__next">Next</button>
                     </div>
                 </div>
-                )
+        )
     }
 }
 
