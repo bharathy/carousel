@@ -1,41 +1,68 @@
-
 @import "./variables";
 @import "./base";
 
-/*  functional_css */
-.bdr-btm {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-color: $grey;
+.header {
+  padding: 10px 20px;
+  h1{
+    font-size: 28px;
+  }
 }
-.bdr-rt { border-right: 1px solid $grey; }
-.p5-0 { padding: 5px 0; }
-.flex { display: flex; }
-.flex-row { flex-direction: row; }
-.flex-auto { flex: auto; }
-.ft-14 {font-size: 14px;}
-.ft-22 {font-size: 22px;}
-.center { text-align:center }
-.p10{ padding:10px; }
-.p-20-0 {padding: 20px 0;}
 
 .carousel {
-  width: 200px;
-  height: 100px;
-  /*mobile*/
-  @media (min-width: 320px) and (max-width: 480px) {
-    background-color: red;
+  .carousel__slide__container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-color: $white;
+    .carousel__slide {
+      display: inline-block;
+      flex: auto;
+      padding: 9px;
+    }
+    .carousel__slide__img {
+      width:160px;
+      height:140px;
+    }
+    .carousel__slide__title {
+      padding:4px 0;
+      font-weight: 400;
+      font-size: 14px;
+    }
   }
-  /* wider mobile*/
-  @media (min-width: 481px) and (max-width: 767px) {
-    background-color: orange;
+  .carousel__btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 23px;
+    .btn {
+      width:62px;
+      height: 26px;
+      font-size: 13px;
+      background-color: $blue;
+      color: $white;
+      border: 1px solid transparent;
+    }
+    .carousel__btn__prev {
+      border-radius: 6px 0 0 6px;
+      margin-right: 4px;
+    }
+    .carousel__btn__next {
+      border-radius: 0 6px 6px 0;
+    }
   }
-  /* tablet */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    background-color: yellow;
-  }
-  /*desktop*/
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    background-color: green;
-  }
+    /*mobile*/
+    @media (min-width: 320px) and (max-width: 480px) {
+      // background-color: red;
+    }
+    /* wider mobile*/
+    @media (min-width: 481px) and (max-width: 767px) {
+      // background-color: orange;
+    }
+    /* tablet */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      // background-color: yellow;
+    }
+    /*desktop*/
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      // background-color: green;
+    }
 }

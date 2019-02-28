@@ -6,8 +6,9 @@ export default () => {
 	return (
 	<BrowserRouter>
 		<div>
-			<header className="bdr-btm center h-full p10 turq w-full">
-			<h1 className="ft-22">Carousel</h1></header>
+			<header className="header">
+				<h1>Carousel Test</h1>
+			</header>
 			<Switch>
 				<Route exact path='/' component={App}/>
 			</Switch>
