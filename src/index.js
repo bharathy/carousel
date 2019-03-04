@@ -2,23 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import Root from './components/root';
+import App from './components/app';
 import carouselReducer from './reducers/carousel';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 export const init = () => {
 	const initialState = {
-		images: []
+		images: [],
+		currentImage: null
 	};
 	const store = createStoreWithMiddleware(carouselReducer, initialState);
 
 	ReactDOM.render(
-		<Root store={ store } />,
+		<Provider store={ store }>
+        	<App />
+    	</Provider>,
 		document.getElementById('app')
 	);
 }
+
+init();
 
 module.hot.accept();

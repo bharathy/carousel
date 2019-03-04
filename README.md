@@ -1,9 +1,9 @@
 # Carousel
 
- Carousel Using React + Redux + Webpack + React Router
+ Carousel Using React + Redux + Webpack 
 
 Libraries:
-- React + Redux + Webpack + React Router
+- React + Redux + Webpack 
 
 **To Run locally:**
 ```
@@ -26,5 +26,12 @@ $ npm run build
 
 **screenshot:**
 
-<!-- ![Alt text](/carousel.png?raw=true "carousel") -->
+**Desktop:**
+
+![Alt text](/carousel_desktop.png?raw=true "carousel desktop")
+
+**Mobile:**
+
+![Alt text](/carousel_mobile.png?raw=true "carousel mobile")
+
 

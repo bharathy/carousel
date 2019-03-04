@@ -8,10 +8,11 @@ import Carousel from '../components/carousel';
 
 const App = () => {
     return (
-        <div className="app">
-            <div className="content">
-                <Carousel />
-            </div>
+        <div className="content">
+            <header className="header">
+                <h1>Carousel Test</h1>
+            </header>
+            <Carousel />
         </div>
     )
 };
