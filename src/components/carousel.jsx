@@ -18,28 +18,26 @@ class Carousel extends React.Component{
     render() {
         const { images, currentImage, nextImage, prevImage }= this.props;
         const currentImageIndex = (currentImage) ? currentImage.index : 0;
-        const slides = images.map(image => <Slide key= { image.id } image={ image}/> );
+        const slides = images.map(image => <Slide key= { image.id } { ...image }/> );
         const disableNext = currentImageIndex === images.length-1
         const disablePrev = currentImageIndex === 0;
 
         return (<div className="carousel">
                     <div className={`carousel__slider active-slide-${currentImageIndex}`}>
+                        <div className="carousel__slider__wrapper" 
+                            style={{'transform': `translateX(-${currentImageIndex * (100/images.length)}%)`}}>
+                            { slides }  
+                        </div>
                         <button className={`arrow_wrapper prev ${(disablePrev) ? 'disable' : ''}`} 
                                 onClick={ prevImage }
                                 disabled={ disablePrev }>
                             <img src="arrow.svg" alt="prev" className="prev"/>
                         </button>
-
                         <button className={`arrow_wrapper ${(disableNext) ? 'disable' : ''}`}
                                 onClick={ nextImage }
                                 disabled={ disableNext }>
                             <img src="arrow.svg" alt="next" className="next"/>
                         </button>
-
-                        <div className="carousel__slider__wrapper" 
-                            style={{'transform': `translateX(-${currentImageIndex * (100/images.length)}%)`}}>
-                            { slides }  
-                        </div>
                     </div>
                     <div className="carousel__btn">
                         <button className={`btn carousel__btn__prev ${(disablePrev) ? 'disable' : ''}`} 

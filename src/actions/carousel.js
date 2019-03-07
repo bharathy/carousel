@@ -6,7 +6,6 @@ const QUERY = 'q=beautiful+landscape&image_type=photo';
 
 /* NEXT IMAGE ACTION */
 export function nextImage() {
-	console.log("next");
 	return (dispatch) => {
 		dispatch({
 			type: NEXT_IMAGE
@@ -16,7 +15,6 @@ export function nextImage() {
 
 /* PREV IMAGE ACTION */
 export function prevImage() {
-	console.log("prev");
 	return (dispatch) => {
 		dispatch({
 			type: PREV_IMAGE
@@ -28,6 +26,7 @@ export function prevImage() {
 export function fetchImages() {
 	return (dispatch) => {
 		const embedded_api = `${IMAGE_BASE_API}?key=${KEY}&${QUERY}`;
+
 		return fetch(embedded_api)
 		.then(function(response) {
 			return response.json();
